@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+  <title>Audio Homepage</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      font-family: 'Aclonica', Arial, Helvetica, sans-serif;
+      background: #f6f6f6;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      background: #f6f6f6;
+    }
+
+    .center-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-decoration: none;
+      color: #000;
+      font-size: clamp(3rem, 7vw, 7rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      z-index: 3;
+      white-space: nowrap;
+    }
+
+    .center-title span {
+      display: inline-block;
+    }
+
+    .tile {
+      position: absolute;
+      width: clamp(110px, 14vw, 180px);
+      aspect-ratio: 1 / 1;
+      border-radius: 18%;
+      text-decoration: none;
+      transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+      opacity: 0.78;
+      z-index: 1;
+    }
+
+    .tile:hover,
+    .tile:focus-visible {
+      transform: scale(1.08);
+      opacity: 1;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .tile-1 {
+      background: #d9cccc;
+      top: 13%;
+      left: 26%;
+    }
+
+    .tile-2 {
+      background: #cddde0;
+      top: 16%;
+      right: 20%;
+    }
+
+    .tile-3 {
+      background: #cfdcc7;
+      top: 47%;
+      left: 8%;
+    }
+
+    .tile-4 {
+      background: #d2d7e5;
+      top: 58%;
+      right: 9%;
+    }
+
+    .tile-5 {
+      background: #eee29d;
+      top: 72%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .tile-5:hover,
+    .tile-5:focus-visible {
+      transform: translateX(-50%) scale(1.08);
+    }
+
+    @media (max-width: 900px) {
+      .center-title {
+        font-size: clamp(2.5rem, 9vw, 5rem);
+      }
+
+      .tile {
+        width: clamp(92px, 20vw, 150px);
+      }
+
+      .tile-1 {
+        top: 13%;
+        left: 17%;
+      }
+
+      .tile-2 {
+        top: 18%;
+        right: 14%;
+      }
+
+      .tile-3 {
+        top: 49%;
+        left: 6%;
+      }
+
+      .tile-4 {
+        top: 60%;
+        right: 7%;
+      }
+
+      .tile-5 {
+        top: 76%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 24px 16px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .center-title {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        order: 2;
+        margin: 18px 0;
+        text-align: center;
+      }
+
+      .tile {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: min(34vw, 140px);
+      }
+
+      .tiles-row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .tile-1,
+      .tile-2,
+      .tile-3,
+      .tile-4,
+      .tile-5 {
+        transform: none;
+      }
+
+      .tile-1:hover,
+      .tile-1:focus-visible,
+      .tile-2:hover,
+      .tile-2:focus-visible,
+      .tile-3:hover,
+      .tile-3:focus-visible,
+      .tile-4:hover,
+      .tile-4:focus-visible,
+      .tile-5:hover,
+      .tile-5:focus-visible {
+        transform: scale(1.08);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="tiles-row">
+      <a class="tile tile-1" href="record.html" aria-label="Go to page 1"></a>
+      <a class="tile tile-2" href="hourglass.html" aria-label="Go to page 2"></a>
+    </div>
+
+    <div class="center-title">
+      <span>&lt;Audio&gt;</span>
+    </div>
+
+    <div class="tiles-row">
+      <a class="tile tile-3" href="runningman.html" aria-label="Go to page 3"></a>
+      <a class="tile tile-4" href="page4.html" aria-label="Go to page 4"></a>
+    </div>
+
+    <a class="tile tile-5" href="page5.html" aria-label="Go to page 5"></a>
+  </main>
+</body>
+</html>

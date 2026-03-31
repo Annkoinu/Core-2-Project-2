@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+  <title>Running Man</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f6f6f6;
+      font-family: 'Aclonica', sans-serif;
+      color: #000;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      padding: 28px 28px 48px;
+    }
+
+    .topbar {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      text-decoration: none;
+      color: #000;
+      font-size: 0.95rem;
+      opacity: 0.7;
+    }
+
+    .back-link:hover { opacity: 1; }
+
+    .page-title {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      text-align: center;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+
+    .content {
+      width: min(900px, 100%);
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .gif-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      text-align: center;
+    }
+
+    .gif-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .gif-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .label-box {
+      padding: 16px 20px;
+      border-radius: 24px;
+      background: #cfdcc7;
+      font-size: 1rem;
+    }
+
+    .label-box p {
+      display: block;
+      margin-top: 6px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 700px) {
+      .content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <main class="page">
+
+    <div class="topbar">
+      <a class="back-link" href="index.html">← back</a>
+    </div>
+
+    <h1 class="page-title">Running Man</h1>
+
+    <section class="content">
+
+      <article class="gif-card">
+        <div class="gif-frame">
+          <img src="runnning man/hover.gif" alt="hover">
+        </div>
+        <div class="label-box">
+          Hover
+          <p>Cursor enters the component</p>
+        </div>
+      </article>
+
+      <article class="gif-card">
+        <div class="gif-frame">
+          <img src="runnning man/play.gif" alt="play">
+        </div>
+        <div class="label-box">
+          Play
+          <p>Click to start the audio</p>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

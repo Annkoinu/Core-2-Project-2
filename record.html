@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+    <title>Record Player</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #f6f6f6;
+            font-family: 'Aclonica', sans-serif;
+            color: #000;
+        }
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            padding: 28px 28px 48px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 0.95rem;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .page-title {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            text-align: center;
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+
+        .content {
+            width: min(1100px, 100%);
+            margin: 36px auto 0;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 32px 40px;
+            align-items: start;
+            justify-items: center;
+        }
+
+        .gif-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 16px;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .left-column {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .right-column {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .gif-frame {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gif-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .label-box {
+            min-width: 150px;
+            padding: 16px 18px;
+            border-radius: 24px;
+            background: #d9cccc;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.2;
+        }
+
+        .label-box p {
+            display: block;
+            margin-top: 6px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            line-height: 1.35;
+        }
+
+        .card-1 .gif-frame,
+        .card-1 .label-box {
+            background: #d9cccc;
+        }
+
+        .card-2 .gif-frame,
+        .card-2 .label-box {
+            background: #d9cccc;
+        }
+
+        .card-3 .gif-frame,
+        .card-3 .label-box {
+            background: #d9cccc;
+        }
+
+        .card-3 .gif-frame {
+            aspect-ratio: auto;
+            border-radius: 24px;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .card-3 .gif-frame img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .left-column,
+            .right-column {
+                width: 100%;
+            }
+
+            .gif-card {
+                width: min(430px, 100%);
+                margin: 0 auto;
+            }
+
+            .gif-frame {
+                width: 100%;
+            }
+        }
+
+        .gif-card {
+            width: min(430px, 100%);
+            margin: 0 auto;
+        }
+
+        .gif-frame {
+            width: 100%;
+        }
+
+
+        @media (max-width: 520px) {
+            .page {
+                padding: 18px 16px 36px;
+            }
+
+            .topbar {
+                justify-content: flex-start;
+                margin-bottom: 14px;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+                padding: 0 8px;
+            }
+
+            .label-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+        <div class="topbar">
+            <a class="back-link" href="index.html">← back</a>
+        </div>
+
+        <h1 class="page-title">Record Player</h1>
+
+
+        <section class="content">
+            <div class="left-column">
+                <article class="gif-card card-1">
+                    <div class="gif-frame">
+                        <img src="record/hover.gif" alt="Record player hover interaction" />
+                    </div>
+                    <div class="label-box">
+                        Hover
+                        <p>Cursor enters the component</p>
+                    </div>
+                </article>
+
+                <article class="gif-card card-2">
+                    <div class="gif-frame">
+                        <img src="record/play.gif" alt="Record player play interaction" />
+                    </div>
+                    <div class="label-box">
+                        Play
+                        <p>Click to start the audio</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="right-column">
+                <article class="gif-card card-3">
+                    <div class="gif-frame">
+                        <img src="record/scroll.gif" alt="Record player switch songs interaction" />
+                    </div>
+                    <div class="label-box">
+                        Switch Songs
+                        <p>Drag up and down to change songs</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
